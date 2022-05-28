@@ -35,11 +35,12 @@ def nearest_Neighbors(target, data, kN):
 def main(sL, sW, pL, pW, kN):
     pred = cross_Validation_NN(x, kN)
     result = 100 * (np.sum(pred == y) / len(y))
-    print("%.2f" % result, '%')
     userData = [sL, sW, pL, pW]
     print('------------------------------')
     print('[SAMPLE] :', userData)
-    print('Prediction :', prediction_label[nearest_Neighbors(userData, x, kN)])
+    print("[NUMBER OF NEIGHBORS] :", kN)
+    print("[ACCURACY] : %.2f" % result, '%')
+    print('[PREDICTION] :', prediction_label[nearest_Neighbors(userData, x, kN)])
 
 if __name__ == "__main__":
     import argparse
